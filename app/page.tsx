@@ -5,7 +5,7 @@ import {
   howItWorksData,
   statsData,
   testimonialsData,
-} from "./data/landing";
+} from "../data/landing";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "lucide-react";
 
@@ -14,7 +14,7 @@ export default function Home() {
     <div className="mt-40">
       <HeroSection />
 
-      <section className="py-20 bg-blue-50">
+      {/* <section className="py-20 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 ms:grid-cols-4 gap-8">
             {statsData.map((statsData, index) => (
@@ -27,12 +27,12 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
-            Eveything you need to manage your finances
+            Everything you need to manage your money effectively.{" "}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuresData.map((feature, index) => (
@@ -94,7 +94,7 @@ export default function Home() {
           <Link href="/dashboard">
             <Button
               size="lg"
-              className="bg-white text-blue-600 hover:bg-blue-50 animate-bounce"
+              className="bg-white text-blue-600 hover:bg-blue-50 border border-blue-600"
             >
               Start Free Trial
             </Button>
