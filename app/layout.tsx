@@ -4,11 +4,6 @@ import { Inter } from "next/font/google";
 import Header from "@/components/header";
 import {
   ClerkProvider,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
 } from "@clerk/nextjs";
 import { Toaster } from "sonner";
 import { Mail } from "lucide-react";

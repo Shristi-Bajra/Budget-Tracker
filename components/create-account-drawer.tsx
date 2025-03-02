@@ -28,9 +28,11 @@ import useFetch from "@/hooks/usefetch";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { createAccount } from "@/action/dasboard";
+import { z } from "zod";
 
 const CreateAccountDrawer = ({ children }: { children: ReactNode }) => {
   const [open, setOpen] = useState(false);
+  type AccountFormData = z.infer<typeof accountSchema>;
 
   const {
     register,
@@ -62,16 +64,16 @@ const CreateAccountDrawer = ({ children }: { children: ReactNode }) => {
       reset();
       setOpen(false);
     }
-  }, [createAccountLoading, newAccount]);
+  }, [createAccountLoading, newAccount, reset]);
 
   useEffect(() => {
     if (error) {
-      console.error("Create Account Error", error)
       toast.error(error instanceof Error ? error.message : "Failed to create Account");
+      reset();
     }
-  }, [error]);
+  }, [error, reset]);
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: AccountFormData) => {
     await createAccountFn(data);
     console.log(data);
   };

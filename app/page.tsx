@@ -3,10 +3,8 @@ import { Button } from "@/components/ui/button";
 import {
   featuresData,
   howItWorksData,
-  statsData,
-  testimonialsData,
 } from "../data/landing";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "lucide-react";
 
 export default function Home() {
